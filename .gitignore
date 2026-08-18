@@ -1,0 +1,55 @@
+# --- SECRETOS: nunca al repo -------------------------------------------------
+# Clave privada de la service account de Google. Quien la tenga puede leer y
+# escribir la planilla del bot. Va por fuera de git (ver README/config.py:
+# se espera junto al .py o junto al .exe).
+credentials.json
+*.json.key
+service_account*.json
+token.json
+
+# --- Salida del bot ----------------------------------------------------------
+# main.py crea logs/ solo; el contenido es de cada corrida y tiene datos
+# operativos (rutas, colectores, localidades).
+logs/
+*.log
+
+# --- Empaquetado (build.bat) -------------------------------------------------
+build/
+dist/
+*.spec
+*.manifest
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv_build
+
+# --- Playwright --------------------------------------------------------------
+# Navegadores instalados con PLAYWRIGHT_BROWSERS_PATH=0 (build.bat) y restos de
+# corridas fallidas. Pesan cientos de MB.
+.local-browsers/
+playwright-report/
+test-results/
+
+# --- Editores / SO -----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Claude Code -------------------------------------------------------------
+# settings.local.json es la config personal de cada uno (permisos, etc.).
+.claude/settings.local.json
